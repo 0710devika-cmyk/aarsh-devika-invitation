@@ -11,7 +11,7 @@ interface MusicPlayerProps {
 }
 
 export function MusicPlayer({
-  src = "/audio/wedding-music.mp3",
+  src = "/audio/wedding-music_v.mp3",
   className,
 }: MusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);

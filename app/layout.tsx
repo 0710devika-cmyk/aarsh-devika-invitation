@@ -93,7 +93,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="id"
+      lang="en"
       className={`${playfair.variable} ${inter.variable}`}
       suppressHydrationWarning
     >

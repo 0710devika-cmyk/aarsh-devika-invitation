@@ -3,6 +3,21 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    /* 1. Set the background image */
+    background-image: url('/watercolor-ganesh-chaturthi-background.png');
+    
+    /* 2. Make it cover the whole screen and stay fixed when scrolling */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    /* 3. Add a fallback color */
+    background-color: var(--bg-primary, #111);
+  }
+}
+@layer base {
   :root {
     --color-gold-primary: #d4af37;
     --color-gold-soft: #f5d76e;

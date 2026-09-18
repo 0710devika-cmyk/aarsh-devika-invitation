@@ -35,7 +35,7 @@ export function OpeningScreen({ guestName, onOpen }: OpeningScreenProps) {
             transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
           }}
           className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden"
-          style={{ background: "var(--bg-primary)" }}
+          // style={{ background: "var(--bg-primary)" }}
           role="dialog"
           aria-modal="true"
           aria-label="Wedding invitation opening screen"
