@@ -26,7 +26,7 @@ interface EntryCardProps {
 }
 
 function EntryCard({ entry, index }: EntryCardProps) {
-  const formattedDate = new Date(entry.timestamp).toLocaleDateString("id-ID", {
+  const formattedDate = new Date(entry.timestamp).toLocaleDateString("en-US", {
     day: "numeric",
     month: "short",
     year: "numeric",
@@ -122,20 +122,20 @@ export function GuestbookSection() {
     <section
       id="guestbook"
       className="py-24 section-padding overflow-hidden"
-      aria-label="Buku tamu dan ucapan"
+      aria-label="Guestbook and wishes"
     >
       <div className="mx-auto max-w-2xl">
         <Reveal direction="up">
           <div className="mb-12 flex flex-col items-center gap-3 text-center">
             <span className="font-sans text-xs uppercase tracking-[0.4em] text-[color:var(--text-muted)]">
-              Doa &amp; Ucapan
+              Wishes &amp; Prayers
             </span>
             <h2 className="font-serif text-3xl font-bold gold-text sm:text-4xl">
-              Buku Tamu
+              Guestbook
             </h2>
             <div className="gold-divider w-24" aria-hidden />
             <p className="font-sans text-sm text-[color:var(--text-secondary)]">
-              Tinggalkan ucapan dan doa untuk kedua mempelai.
+              Leave a message and your best wishes for the couple.
             </p>
           </div>
         </Reveal>
@@ -166,10 +166,10 @@ export function GuestbookSection() {
                     <Heart className="h-6 w-6 text-[#D4AF37]" />
                   </motion.div>
                   <p className="font-serif text-lg font-semibold text-[color:var(--text-primary)]">
-                    Ucapan Terkirim!
+                    Message Sent!
                   </p>
                   <p className="font-sans text-sm text-[color:var(--text-secondary)]">
-                    Terima kasih atas doa dan ucapan Anda yang indah.
+                    Thank you for your beautiful wishes and prayers.
                   </p>
                 </motion.div>
               ) : (
@@ -183,9 +183,9 @@ export function GuestbookSection() {
                   noValidate
                 >
                   <Input
-                    label="Nama"
+                    label="Name"
                     type="text"
-                    placeholder="Nama Anda"
+                    placeholder="Your Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     error={errors.name}
@@ -195,8 +195,8 @@ export function GuestbookSection() {
                   />
 
                   <Textarea
-                    label="Pesan & Doa"
-                    placeholder="Tuliskan ucapan tulus Anda untuk Arga & Nimas..."
+                    label="Message & Wishes"
+                    placeholder="Write your heartfelt wishes for Arga & Nimas..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     error={errors.message}
@@ -224,7 +224,7 @@ export function GuestbookSection() {
                     className="w-full gap-2"
                   >
                     <Send className="h-4 w-4" aria-hidden />
-                    Kirim Ucapan
+                    Send Message
                   </Button>
                 </motion.form>
               )}
@@ -232,14 +232,14 @@ export function GuestbookSection() {
           </div>
         </Reveal>
 
-        <div aria-label="Daftar ucapan tamu" aria-live="polite">
+        <div aria-label="Guest message list" aria-live="polite">
           {fetchState.status === "loading" && (
-            <LoadingState message="Memuat ucapan..." />
+            <LoadingState message="Loading messages..." />
           )}
 
           {fetchState.status === "error" && (
             <ErrorState
-              message="Gagal memuat ucapan. Silakan refresh halaman."
+              message="Failed to load messages. Please refresh the page."
               onRetry={load}
             />
           )}
@@ -249,7 +249,7 @@ export function GuestbookSection() {
             <div className="flex flex-col gap-4">
               {entries.length === 0 && fetchState.status === "success" ? (
                 <p className="py-8 text-center font-sans text-sm text-[color:var(--text-muted)]">
-                  Belum ada ucapan. Jadilah yang pertama!
+                  No messages yet. Be the first to leave one!
                 </p>
               ) : (
                 entries.map((entry, i) => (

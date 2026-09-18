@@ -34,6 +34,8 @@ export interface StoryItem {
   year: string;
   title: string;
   description: string;
+  dresscode: string;
+  src: string | null;
 }
 
 export interface GalleryImage {

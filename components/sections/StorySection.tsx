@@ -29,6 +29,9 @@ function StoryCard({ item, index, isLeft }: StoryCardProps) {
               <p className="mt-2 font-sans text-sm leading-relaxed text-[color:var(--text-secondary)]">
                 {item.description}
               </p>
+              <p className="mt-2 font-sans text-sm leading-relaxed text-[color:var(--text-secondary)]">
+                Dress Code: {item.dresscode}
+              </p>
             </article>
           </Reveal>
 
@@ -52,6 +55,9 @@ function StoryCard({ item, index, isLeft }: StoryCardProps) {
                 </h3>
                 <p className="mt-1.5 font-sans text-sm leading-relaxed text-[color:var(--text-secondary)]">
                   {item.description}
+                </p>
+                <p className="mt-2 font-sans text-sm leading-relaxed text-[color:var(--text-secondary)]">
+                  Dress Code: {item.dresscode}
                 </p>
               </article>
             </Reveal>
@@ -87,6 +93,9 @@ function StoryCard({ item, index, isLeft }: StoryCardProps) {
               <p className="mt-2 font-sans text-sm leading-relaxed text-[color:var(--text-secondary)]">
                 {item.description}
               </p>
+              <p className="mt-2 font-sans text-sm leading-relaxed text-[color:var(--text-secondary)]">
+                Dress Code: {item.dresscode}
+              </p>
             </article>
           </Reveal>
         </>
@@ -102,7 +111,7 @@ export function StorySection() {
     <section
       id="story"
       className="relative py-24 section-padding overflow-hidden"
-      aria-label="Cerita perjalanan kami"
+      aria-label="Our travel story"
     >
       <AnimatedGradient className="z-0 opacity-40" />
 
@@ -110,10 +119,9 @@ export function StorySection() {
         <Reveal direction="up">
           <div className="mb-14 flex flex-col items-center gap-3 text-center">
             <span className="font-sans text-xs uppercase tracking-[0.4em] text-[color:var(--text-muted)]">
-              Perjalanan Kami
             </span>
             <h2 className="font-serif text-3xl font-bold gold-text sm:text-4xl">
-              Cerita Cinta
+              The Wedding Festivities
             </h2>
             <div className="gold-divider w-24" aria-hidden />
           </div>

@@ -18,7 +18,7 @@ function AccountCard() {
       setCopied(type);
       setTimeout(() => setCopied(null), 2200);
     } catch {
-      // Clipboard API tidak tersedia di beberapa browser lama
+      // Clipboard API is not available in some older browsers
     }
   }
 
@@ -31,7 +31,7 @@ function AccountCard() {
           </div>
           <div>
             <p className="font-sans text-xs uppercase tracking-widest text-[color:var(--text-muted)]">
-              Transfer ke
+              Transfer to
             </p>
             <p className="font-serif text-base font-semibold text-[color:var(--text-primary)]">
               Bank {gift.bankName}
@@ -43,7 +43,7 @@ function AccountCard() {
       <div className="p-6 flex flex-col gap-5">
         <div className="flex flex-col gap-1">
           <p className="font-sans text-xs text-[color:var(--text-muted)]">
-            Atas Nama
+            Account Holder
           </p>
           <p className="font-serif text-lg font-semibold text-[color:var(--text-primary)]">
             {gift.accountHolder}
@@ -52,7 +52,7 @@ function AccountCard() {
 
         <div className="flex flex-col gap-2">
           <p className="font-sans text-xs text-[color:var(--text-muted)]">
-            Nomor Rekening
+            Account Number
           </p>
           <div className="flex items-center gap-3">
             <p className="font-mono text-xl font-bold tracking-widest text-[#D4AF37]">
@@ -70,8 +70,8 @@ function AccountCard() {
               whileTap={{ scale: 0.9 }}
               aria-label={
                 copied === "number"
-                  ? "Nomor rekening tersalin"
-                  : "Salin nomor rekening"
+                  ? "Account number copied"
+                  : "Copy account number"
               }
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -109,7 +109,7 @@ function AccountCard() {
                 role="status"
                 aria-live="polite"
               >
-                Nomor rekening tersalin ke clipboard
+                Account number copied to clipboard
               </motion.p>
             )}
           </AnimatePresence>
@@ -124,7 +124,7 @@ export function GiftSection() {
     <section
       id="gift"
       className="py-24 section-padding overflow-hidden"
-      aria-label="Informasi hadiah dan rekening"
+      aria-label="Gift and account information"
     >
       <div className="mx-auto max-w-md">
         <Reveal direction="up">
@@ -133,13 +133,12 @@ export function GiftSection() {
               Wedding Gift
             </span>
             <h2 className="font-serif text-3xl font-bold gold-text sm:text-4xl">
-              Hadiah
+              Gifts
             </h2>
             <div className="gold-divider w-24" aria-hidden />
             <p className="font-sans text-sm text-[color:var(--text-secondary)] max-w-sm text-balance leading-relaxed">
-              Kehadiran dan doa Anda adalah hadiah terindah bagi kami. Namun
-              jika Anda ingin memberikan tanda kasih, kami menerima dengan penuh
-              rasa syukur.
+              Your presence and prayers are the greatest gifts to us. However, 
+              if you wish to give a token of love, we accept it with profound gratitude.
             </p>
           </div>
         </Reveal>
@@ -150,8 +149,8 @@ export function GiftSection() {
 
         <Reveal delay={0.25} direction="up">
           <p className="mt-6 text-center font-sans text-xs text-[color:var(--text-muted)] leading-relaxed">
-            Konfirmasi transfer dapat dikirimkan melalui WhatsApp kepada
-            keluarga pengantin. Terima kasih atas kebaikan hati Anda.
+            Transfer confirmation can be sent via WhatsApp to the family. 
+            Thank you for your kindness.
           </p>
         </Reveal>
       </div>

@@ -44,8 +44,15 @@ export function HeroSection() {
             transition={{ duration: 1.1, delay: 0.4, ease: [0.19, 1, 0.22, 1] }}
             className="gold-shimmer-text font-serif text-5xl font-bold leading-tight tracking-wide sm:text-6xl md:text-7xl lg:text-8xl"
           >
-            {couple.groomFull}
+            {couple.brideFull}
           </motion.h1>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="gold-shimmer-text font-serif text-3xl font-bold leading-tight tracking-wide sm:text-3xl md:text-4xl lg:text-5xl"
+            >
+              <p className="font-serif text-lg italic text-[#D4AF37]"> {couple.brideParents}</p>
+            </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -63,8 +70,15 @@ export function HeroSection() {
             transition={{ duration: 1.1, delay: 0.5, ease: [0.19, 1, 0.22, 1] }}
             className="gold-shimmer-text font-serif text-5xl font-bold leading-tight tracking-wide sm:text-6xl md:text-7xl lg:text-8xl"
           >
-            {couple.brideFull}
+            {couple.groomFull}
           </motion.h1>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="gold-shimmer-text font-serif text-3xl font-bold leading-tight tracking-wide sm:text-3xl md:text-4xl lg:text-5xl"
+            >
+              <p className="font-serif text-lg italic text-[#D4AF37]"> {couple.groomParents}</p>
+            </motion.div>
         </div>
 
         <Reveal delay={0.9} direction="up">
@@ -91,12 +105,10 @@ export function HeroSection() {
         <Reveal delay={1.1} direction="up">
           <div className="flex flex-col items-center gap-2 pt-4">
             <p className="font-serif text-base italic text-[color:var(--text-secondary)] max-w-sm text-balance leading-relaxed">
-              &ldquo;Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
-              untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung
-              dan merasa tenteram kepadanya.&rdquo;
+              &ldquo;May the universal divine forces and the cosmic waters blend our two hearts into one. May the breath of life, the creator, and the guide bind us closely together forever.&rdquo;
             </p>
             <p className="font-sans text-xs text-[color:var(--text-muted)]">
-              — QS. Ar-Rum: 21
+              — Rig Veda (10.85.47)
             </p>
           </div>
         </Reveal>

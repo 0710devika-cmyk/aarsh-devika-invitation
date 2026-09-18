@@ -62,7 +62,7 @@ export function RsvpSection() {
     <section
       id="rsvp"
       className="relative py-24 section-padding overflow-hidden"
-      aria-label="Konfirmasi kehadiran"
+      aria-label="RSVP Confirmation"
     >
       <AnimatedGradient className="z-0 opacity-50" />
 
@@ -70,15 +70,15 @@ export function RsvpSection() {
         <Reveal direction="up">
           <div className="mb-12 flex flex-col items-center gap-3 text-center">
             <span className="font-sans text-xs uppercase tracking-[0.4em] text-[color:var(--text-muted)]">
-              Konfirmasi
+              Confirmation
             </span>
             <h2 className="font-serif text-3xl font-bold gold-text sm:text-4xl">
               RSVP
             </h2>
             <div className="gold-divider w-24" aria-hidden />
             <p className="font-sans text-sm text-[color:var(--text-secondary)] max-w-sm text-balance">
-              Mohon konfirmasi kehadiran Anda paling lambat{" "}
-              <strong className="text-[#D4AF37]">10 Desember 2026</strong>.
+              Please confirm your attendance no later than{" "}
+              <strong className="text-[#D4AF37]">November 10, 2026</strong>.
             </p>
           </div>
         </Reveal>
@@ -110,15 +110,14 @@ export function RsvpSection() {
                   </motion.div>
                   <div className="flex flex-col gap-1.5">
                     <h3 className="font-serif text-xl font-semibold text-[color:var(--text-primary)]">
-                      Terima Kasih!
+                      Thank You!
                     </h3>
                     <p className="font-sans text-sm text-[color:var(--text-secondary)]">
-                      Konfirmasi kehadiran Anda telah kami terima. Kami sangat
-                      menantikan kehadiran Anda.
+                      We have received your RSVP. We are so excited to celebrate with you!
                     </p>
                   </div>
                   <Button variant="outline" size="sm" onClick={handleReset}>
-                    Kirim Ulang
+                    Resubmit
                   </Button>
                 </motion.div>
               ) : (
@@ -132,9 +131,9 @@ export function RsvpSection() {
                   noValidate
                 >
                   <Input
-                    label="Nama Lengkap"
+                    label="Full Name"
                     type="text"
-                    placeholder="Masukkan nama Anda"
+                    placeholder="Enter your full name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     error={errors.name}
@@ -145,8 +144,8 @@ export function RsvpSection() {
 
                   <fieldset>
                     <legend className="mb-2 text-sm font-medium text-[color:var(--text-secondary)]">
-                      Konfirmasi Kehadiran{" "}
-                      <span className="text-[#D4AF37]" aria-label="wajib diisi">
+                      Attendance Confirmation{" "}
+                      <span className="text-[#D4AF37]" aria-label="required">
                         *
                       </span>
                     </legend>
@@ -203,7 +202,7 @@ export function RsvpSection() {
                         className="text-sm font-medium text-[color:var(--text-secondary)]"
                       >
                         <Users className="inline h-3.5 w-3.5 mr-1 text-[#D4AF37]" aria-hidden />
-                        Jumlah Tamu
+                        Number of Guests
                       </label>
                       <div className="flex items-center gap-3">
                         <button
@@ -212,7 +211,7 @@ export function RsvpSection() {
                             setGuestCount((v) => Math.max(1, v - 1))
                           }
                           className="flex h-10 w-10 items-center justify-center rounded-xl border border-[color:var(--border-color)] text-[color:var(--text-primary)] hover:border-[#D4AF37]/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
-                          aria-label="Kurangi jumlah tamu"
+                          aria-label="Decrease guest count"
                         >
                           −
                         </button>
@@ -225,12 +224,12 @@ export function RsvpSection() {
                             setGuestCount((v) => Math.min(5, v + 1))
                           }
                           className="flex h-10 w-10 items-center justify-center rounded-xl border border-[color:var(--border-color)] text-[color:var(--text-primary)] hover:border-[#D4AF37]/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
-                          aria-label="Tambah jumlah tamu"
+                          aria-label="Increase guest count"
                         >
                           +
                         </button>
                         <span className="text-xs text-[color:var(--text-muted)]">
-                          (maks. 5 orang)
+                          {/* (max. 5 guests) */}
                         </span>
                       </div>
                       {errors.guestCount && (
@@ -242,8 +241,8 @@ export function RsvpSection() {
                   )}
 
                   <Textarea
-                    label="Pesan atau Doa (opsional)"
-                    placeholder="Tuliskan pesan atau doa Anda untuk kedua mempelai..."
+                    label="Message or Wishes (optional)"
+                    placeholder="Write a message or your best wishes for the couple..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     error={errors.message}
@@ -266,7 +265,7 @@ export function RsvpSection() {
                     loading={isLoading}
                     className="w-full mt-1"
                   >
-                    Kirim Konfirmasi
+                    Submit RSVP
                   </Button>
                 </motion.form>
               )}

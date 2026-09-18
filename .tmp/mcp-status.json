@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-09-18T16:26:53.983Z",
+  "servers": [
+    {
+      "name": "claude.ai Microsoft 365",
+      "state": "needs-auth",
+      "detail": "Needs authentication"
+    },
+    {
+      "name": "claude.ai Datadog",
+      "state": "needs-auth",
+      "detail": "Needs authentication"
+    }
+  ]
+}

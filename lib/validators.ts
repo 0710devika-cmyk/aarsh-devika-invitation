@@ -9,20 +9,20 @@ import {
 export const rsvpSchema = z.object({
   name: z
     .string()
-    .min(2, "Nama minimal 2 karakter")
-    .max(MAX_NAME_LENGTH, `Nama maksimal ${MAX_NAME_LENGTH} karakter`)
-    .regex(/^[a-zA-Z\s\u00C0-\u024F\u1E00-\u1EFF'-]+$/, "Nama tidak valid"),
+    .min(2, "Name must be at least 2 characters long.")
+    .max(MAX_NAME_LENGTH, `Name must be at most ${MAX_NAME_LENGTH} characters long.`)
+    .regex(/^[a-zA-Z\s\u00C0-\u024F\u1E00-\u1EFF'-]+$/, "Invalid name format."),
   attendance: z.enum(["attending", "not_attending", "maybe"], {
-    errorMap: () => ({ message: "Pilih status kehadiran" }),
+    errorMap: () => ({ message: "Please select an attendance status." }),
   }),
   guestCount: z
     .number()
     .int()
-    .min(MIN_GUEST_COUNT, `Minimal ${MIN_GUEST_COUNT} tamu`)
-    .max(MAX_GUEST_COUNT, `Maksimal ${MAX_GUEST_COUNT} tamu`),
+    .min(MIN_GUEST_COUNT, `Minimal ${MIN_GUEST_COUNT} guests`)
+    .max(MAX_GUEST_COUNT, `Maximal ${MAX_GUEST_COUNT} guests`),
   message: z
     .string()
-    .max(MAX_MESSAGE_LENGTH, `Pesan maksimal ${MAX_MESSAGE_LENGTH} karakter`)
+    .max(MAX_MESSAGE_LENGTH, `Message must be at most ${MAX_MESSAGE_LENGTH} characters long.`)
     .optional()
     .default(""),
 });
@@ -30,13 +30,13 @@ export const rsvpSchema = z.object({
 export const guestbookSchema = z.object({
   name: z
     .string()
-    .min(2, "Nama minimal 2 karakter")
-    .max(MAX_NAME_LENGTH, `Nama maksimal ${MAX_NAME_LENGTH} karakter`)
-    .regex(/^[a-zA-Z\s\u00C0-\u024F\u1E00-\u1EFF'-]+$/, "Nama tidak valid"),
+    .min(2, "Name must be at least 2 characters long.")
+    .max(MAX_NAME_LENGTH, `Name must be at most ${MAX_NAME_LENGTH} characters long.`)
+    .regex(/^[a-zA-Z\s\u00C0-\u024F\u1E00-\u1EFF'-]+$/, "Invalid name format."),
   message: z
     .string()
-    .min(5, "Pesan minimal 5 karakter")
-    .max(MAX_MESSAGE_LENGTH, `Pesan maksimal ${MAX_MESSAGE_LENGTH} karakter`),
+    .min(5, "Message must be at least 5 characters long.")
+    .max(MAX_MESSAGE_LENGTH, `Message must be at most ${MAX_MESSAGE_LENGTH} characters long.`),
 });
 
 export type RsvpFormValues = z.infer<typeof rsvpSchema>;

@@ -47,7 +47,7 @@ export function copyToClipboard(text: string): Promise<void> {
   if (typeof navigator !== "undefined" && navigator.clipboard) {
     return navigator.clipboard.writeText(text);
   }
-  return Promise.reject(new Error("Clipboard API tidak tersedia"));
+  return Promise.reject(new Error("Clipboard API not available"));
 }
 
 export function truncate(str: string, maxLength: number): string {
@@ -57,7 +57,7 @@ export function truncate(str: string, maxLength: number): string {
 
 export function getGuestName(searchParams: URLSearchParams): string {
   const name = searchParams.get("to") ?? searchParams.get("name");
-  if (!name) return "Tamu Undangan";
+  if (!name) return "Guest";
   const decoded = decodeURIComponent(name);
   return decoded.slice(0, 80);
 }

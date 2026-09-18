@@ -10,7 +10,7 @@ interface EventCardProps {
 }
 
 function EventCard({ detail, delay = 0 }: EventCardProps) {
-  const displayDate = new Date(detail.date).toLocaleDateString("id-ID", {
+  const displayDate = new Date(detail.date).toLocaleDateString("en-IN", {
     weekday: "long",
     day: "numeric",
     month: "long",
@@ -65,10 +65,10 @@ function EventCard({ detail, delay = 0 }: EventCardProps) {
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-xl border border-[#D4AF37]/40 px-5 py-3 text-sm font-medium text-[#D4AF37] transition-all duration-300 hover:bg-[#D4AF37]/10 hover:border-[#D4AF37]/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] w-fit"
-          aria-label={`Buka ${detail.mapsLabel} di Google Maps`}
+          aria-label={`Open ${detail.mapsLabel} on Google Maps`}
         >
           <MapPin className="h-3.5 w-3.5" aria-hidden />
-          Buka Google Maps
+          Open Google Maps
           <ExternalLink className="h-3 w-3 opacity-60" aria-hidden />
         </a>
       </article>
@@ -91,23 +91,23 @@ export function EventDetailsSection() {
         <Reveal direction="up">
           <div className="mb-14 flex flex-col items-center gap-3 text-center">
             <span className="font-sans text-xs uppercase tracking-[0.4em] text-[color:var(--text-muted)]">
-              Informasi Acara
+              Event Information
             </span>
             <h2 className="font-serif text-3xl font-bold gold-text sm:text-4xl">
-              Detail Pernikahan
+              Event Details
             </h2>
             <div className="gold-divider w-24" aria-hidden />
             <p className="font-sans text-sm text-[color:var(--text-secondary)] max-w-md text-balance">
-              Dengan penuh kebahagiaan, kami mengundang Anda untuk hadir dan
-              memberikan doa restu.
+              With great joy, we invite you to join us and offer your blessings.
             </p>
           </div>
         </Reveal>
-
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+<div className="mb-2 flex flex-col items-center gap-1 text-center">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-1">
           <EventCard detail={event.akad} delay={0.1} />
-          <EventCard detail={event.reception} delay={0.25} />
+          {/* <EventCard detail={event.reception} delay={0.25} /> */}
         </div>
+      </div>
       </div>
     </section>
   );

@@ -19,9 +19,9 @@ export const ACTIONS = {
 } as const;
 
 export const ATTENDANCE_OPTIONS = [
-  { value: "attending" as const, label: "Hadir" },
-  { value: "not_attending" as const, label: "Tidak Hadir" },
-  { value: "maybe" as const, label: "Mungkin Hadir" },
+  { value: "attending" as const, label: "Will Attend" },
+  { value: "not_attending" as const, label: "Not Attending" },
+  { value: "maybe" as const, label: "Maybe Attending" },
 ] as const;
 
 export const ANIMATION_DURATION = {
@@ -37,4 +37,4 @@ export const EASING = {
   inExpo: [0.95, 0.05, 0.795, 0.035] as const,
 };
 
-export const WEDDING_DATE = new Date("2026-12-20T08:00:00+07:00");
+export const WEDDING_DATE = new Date("2026-12-03T08:00:00+07:00");

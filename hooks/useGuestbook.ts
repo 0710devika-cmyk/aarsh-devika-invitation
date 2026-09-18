@@ -42,7 +42,7 @@ export function useGuestbook(): UseGuestbookReturn {
       }
     } catch (err) {
       const message =
-        err instanceof Error ? err.message : "Gagal memuat ucapan";
+        err instanceof Error ? err.message : "Failed to load guestbook entries";
       setFetchState({ status: "error", message });
     }
   }, []);
@@ -53,7 +53,7 @@ export function useGuestbook(): UseGuestbookReturn {
       if (now - lastSubmit.current < GUESTBOOK_COOLDOWN_MS) {
         setSubmitState({
           status: "error",
-          message: "Mohon tunggu sebentar sebelum mengirim ulang.",
+          message: "Please wait a moment before resending..",
         });
         return false;
       }
@@ -73,7 +73,7 @@ export function useGuestbook(): UseGuestbookReturn {
         }
       } catch (err) {
         const message =
-          err instanceof Error ? err.message : "Gagal mengirim ucapan";
+          err instanceof Error ? err.message : "Failed to submit guestbook entry";
         setSubmitState({ status: "error", message });
         return false;
       }

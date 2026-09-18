@@ -20,18 +20,18 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Pernikahan Arga & Nimas — 20 Desember 2026",
+  title: "Wedding Invitation Aarsh & Devika — 3 December 2026",
   description:
-    "Dengan penuh kebahagiaan, kami mengundang Anda untuk menyaksikan dan memberikan doa restu atas pernikahan Arga Pradipta & Nimas Dyah Ayu Lestari pada Sabtu, 20 Desember 2026 di Grand Ballroom Nusantara, Yogyakarta.",
+    "We invite you to witness our wedding and offer your blessings. Saturday, December 3, 2026,",
   keywords: [
-    "pernikahan",
+    "wedding invitation",
     "wedding",
-    "Arga Pradipta",
-    "Nimas Dyah Ayu Lestari",
-    "undangan digital",
-    "Yogyakarta",
+    "Aarsh Trivedi",
+    "Devika Nair",
+    "wedding invitation",
+    "Lonavala",
     "2026",
-    "#ArgaNimas2026",
+    "#AarshDevika2026",
   ],
   authors: [{ name: "Arga & Nimas" }],
   creator: "Arga & Nimas",
@@ -53,25 +53,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE_URL,
-    title: "Pernikahan Arga & Nimas — 20 Desember 2026",
+    title: "Wedding Aarsh & Devika — 3 December 2026",
     description:
-      "Kami mengundang Anda untuk menyaksikan dan memberikan doa restu atas pernikahan kami. Sabtu, 20 Desember 2026, Grand Ballroom Nusantara, Yogyakarta.",
-    siteName: "Undangan Pernikahan Arga & Nimas",
+      "We invite you to witness our wedding and offer your blessings. Saturday, December 3, 2026,",
+    siteName: "Wedding Invitation Aarsh & Devika",
     locale: "id_ID",
     images: [
       {
         url: `${SITE_URL}/images/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Pernikahan Arga Pradipta & Nimas Dyah Ayu Lestari",
+        alt: "Pernikahan Aarsh & Devika",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pernikahan Arga & Nimas — 20 Desember 2026",
+    title: "Wedding Aarsh & Devika — 3 December 2026",
     description:
-      "Kami mengundang Anda untuk menyaksikan momen bahagia kami. Sabtu, 20 Desember 2026, Yogyakarta.",
+      "We invite you to witness our wedding and offer your blessings. Saturday, December 3, 2026,",
     images: [`${SITE_URL}/images/og-image.png`],
   },
 };

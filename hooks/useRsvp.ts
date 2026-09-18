@@ -23,7 +23,7 @@ export function useRsvp(): UseRsvpReturn {
     if (now - lastSubmit.current < RSVP_COOLDOWN_MS) {
       setState({
         status: "error",
-        message: "Mohon tunggu sebentar sebelum mengirim ulang.",
+        message: "Please wait a moment before resending..",
       });
       return;
     }
@@ -40,7 +40,7 @@ export function useRsvp(): UseRsvpReturn {
       }
     } catch (err) {
       const message =
-        err instanceof Error ? err.message : "Gagal mengirim RSVP";
+        err instanceof Error ? err.message : "Failed to submit RSVP";
       setState({ status: "error", message });
     }
   }, []);

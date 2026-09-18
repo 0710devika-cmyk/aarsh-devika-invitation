@@ -20,7 +20,7 @@ export function OpeningScreen({ guestName, onOpen }: OpeningScreenProps) {
     setTimeout(onOpen, 900);
   }
 
-  const { couple } = invitationData;
+  const { couple, event } = invitationData;
 
   return (
     <AnimatePresence>
@@ -38,7 +38,7 @@ export function OpeningScreen({ guestName, onOpen }: OpeningScreenProps) {
           style={{ background: "var(--bg-primary)" }}
           role="dialog"
           aria-modal="true"
-          aria-label="Layar pembuka undangan pernikahan"
+          aria-label="Wedding invitation opening screen"
         >
           <AnimatedGradient className="z-0" />
           <FloatingParticles count={20} className="z-0" />
@@ -51,9 +51,12 @@ export function OpeningScreen({ guestName, onOpen }: OpeningScreenProps) {
               className="flex flex-col items-center gap-1"
             >
               <span className="font-sans text-xs uppercase tracking-[0.3em] text-[color:var(--text-muted)]">
-                Undangan Pernikahan
+                |Om Shree Ganeshaya Namah|
               </span>
               <div className="gold-divider my-3 w-24" aria-hidden />
+              <span className="font-sans text-xs tracking-[0.1em] text-[color:var(--text-muted)]">
+                Together with their families, we invite you to the wedding of
+              </span>
             </motion.div>
 
             <motion.div
@@ -63,7 +66,7 @@ export function OpeningScreen({ guestName, onOpen }: OpeningScreenProps) {
               className="flex flex-col items-center gap-2"
             >
               <GoldShimmerText
-                text={couple.groomFull}
+                text={couple.brideFull}
                 size="lg"
                 as="h1"
                 className="leading-tight"
@@ -78,7 +81,7 @@ export function OpeningScreen({ guestName, onOpen }: OpeningScreenProps) {
                 &
               </motion.span>
               <GoldShimmerText
-                text={couple.brideFull}
+                text={couple.groomFull}
                 size="lg"
                 as="h1"
                 className="leading-tight"
@@ -92,14 +95,14 @@ export function OpeningScreen({ guestName, onOpen }: OpeningScreenProps) {
               className="flex flex-col items-center gap-1"
             >
               <p className="font-sans text-sm text-[color:var(--text-muted)]">
-                Sabtu, 20 Desember 2026
+                Thursday, December 3, 2026
               </p>
               <p className="font-sans text-sm text-[color:var(--text-muted)]">
-                Grand Ballroom Nusantara, Yogyakarta
+                Palm Manor, Lonavala
               </p>
             </motion.div>
 
-            {guestName && guestName !== "Tamu Undangan" && (
+            {guestName && guestName !== "Guest" && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -107,10 +110,10 @@ export function OpeningScreen({ guestName, onOpen }: OpeningScreenProps) {
                 className="rounded-2xl border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-6 py-3"
               >
                 <p className="font-sans text-sm text-[color:var(--text-muted)]">
-                  Kepada Yth.
+                  Dear
                 </p>
                 <p className="font-serif text-base font-semibold text-[#D4AF37]">
-                  {guestName}
+                  {guestName} & Family
                 </p>
               </motion.div>
             )}
@@ -137,7 +140,7 @@ export function OpeningScreen({ guestName, onOpen }: OpeningScreenProps) {
                   transition={{ duration: 0.5 }}
                   aria-hidden
                 />
-                Buka Undangan
+                Unfold the festivities
               </motion.button>
             </motion.div>
           </div>

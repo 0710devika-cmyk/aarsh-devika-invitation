@@ -64,7 +64,7 @@ export function GallerySection() {
     <section
       id="gallery"
       className="py-24 section-padding overflow-hidden"
-      aria-label="Galeri foto"
+      aria-label="Photo Gallery"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal direction="up">
@@ -73,7 +73,7 @@ export function GallerySection() {
               Pre-Wedding
             </span>
             <h2 className="font-serif text-3xl font-bold gold-text sm:text-4xl">
-              Galeri Foto
+              Photo Gallery
             </h2>
             <div className="gold-divider w-24" aria-hidden />
           </div>
