@@ -4,19 +4,43 @@
 
 @layer base {
   body {
-    /* 1. Set the background image */
-    background-image: url('/watercolor-ganesh-chaturthi-background.png');
-    
-    /* 2. Make it cover the whole screen and stay fixed when scrolling */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    
-    /* 3. Add a fallback color */
+    /* 1. Keep your fallback color */
     background-color: var(--bg-primary, #111);
+
+    /* 2. Ensure relative positioning for stacking context */
+    position: relative;
+    min-height: 100vh;
+    /* If the image is at the top */
+    /* background-position: top center; */
+
+    /* If the image is on the right side */
+    /* background-position: right center; */
+
+    /* Or use percentages (X Y) to dial it in exactly */
+    /* background-position: 80% 20%; */
+  }
+
+  /* 3. Apply the image to a fixed pseudo-element instead */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    /* Shorthand for top: 0, right: 0, bottom: 0, left: 0 */
+    z-index: -10;
+    /* Strictly keeps it behind all UI elements */
+    pointer-events: none;
+    /* Prevents it from blocking any clicks/touches */
+
+    background-image: url('/watercolor-ganesh-chaturthi-background.png');
+    background-size:  cover;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* NOTE: We do NOT use background-attachment: fixed here */
   }
 }
+
 @layer base {
   :root {
     --color-gold-primary: #d4af37;
@@ -79,6 +103,7 @@
     html {
       scroll-behavior: auto;
     }
+
     *,
     *::before,
     *::after {
@@ -102,13 +127,16 @@
   ::-webkit-scrollbar {
     width: 6px;
   }
+
   ::-webkit-scrollbar-track {
     background: var(--bg-secondary);
   }
+
   ::-webkit-scrollbar-thumb {
     background: var(--color-gold-deep);
     border-radius: 3px;
   }
+
   ::-webkit-scrollbar-thumb:hover {
     background: var(--color-gold-primary);
   }
@@ -116,13 +144,11 @@
 
 @layer components {
   .gold-text {
-    background: linear-gradient(
-      135deg,
-      #d4af37 0%,
-      #f5d76e 45%,
-      #d4af37 60%,
-      #b8860b 100%
-    );
+    background: linear-gradient(135deg,
+        #d4af37 0%,
+        #f5d76e 45%,
+        #d4af37 60%,
+        #b8860b 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -130,14 +156,12 @@
   }
 
   .gold-shimmer-text {
-    background: linear-gradient(
-      90deg,
-      #b8860b 0%,
-      #d4af37 25%,
-      #f5d76e 50%,
-      #d4af37 75%,
-      #b8860b 100%
-    );
+    background: linear-gradient(90deg,
+        #b8860b 0%,
+        #d4af37 25%,
+        #f5d76e 50%,
+        #d4af37 75%,
+        #b8860b 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -159,12 +183,10 @@
 
   .gold-divider {
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      var(--color-gold-primary),
-      transparent
-    );
+    background: linear-gradient(90deg,
+        transparent,
+        var(--color-gold-primary),
+        transparent);
     opacity: 0.5;
   }
 
@@ -179,12 +201,10 @@
     content: "";
     flex: 1;
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      var(--color-gold-primary),
-      transparent
-    );
+    background: linear-gradient(90deg,
+        transparent,
+        var(--color-gold-primary),
+        transparent);
     opacity: 0.4;
   }
 }
@@ -197,6 +217,7 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;

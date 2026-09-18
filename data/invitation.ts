@@ -17,7 +17,7 @@ export const invitationData: InvitationData = {
       time: "Muhurtam 08:00 AM", // Adjust this time as needed
       venue: "Palm Manor",
       address: "Lonavala, Maharashtra",
-      city: "Lonavala",
+      city: "Near Malavli Railway Station",
       mapsUrl:
         "https://maps.google.com/?q=Palm+Manor+Lonavala",
       mapsLabel: "Palm Manor, Lonavala",
@@ -29,7 +29,7 @@ export const invitationData: InvitationData = {
       time: "11:00 AM – 02:00 PM", // Adjust this time as needed
       venue: "Palm Manor",
       address: "Lonavala, Maharashtra",
-      city: "Lonavala",
+      city: "Near Malavli Railway Station",
       mapsUrl:
         "https://maps.google.com/?q=Palm+Manor+Lonavala",
       mapsLabel: "Palm Manor, Lonavala",
@@ -43,7 +43,7 @@ export const invitationData: InvitationData = {
   story: [
     {
       year: "30th November 2026 | 12:00 PM",
-      title: "Mehdi Ceremony",
+      title: "Mehendi Ceremony",
       description:
         "At Devika's place - 10/2,Coroment Society, Sector-27, Pradhikaran", // You can customize this story
       dresscode: "Sage, Mint, Olive, Emerald",
