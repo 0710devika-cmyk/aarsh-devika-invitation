@@ -42,7 +42,7 @@ export const invitationData: InvitationData = {
   },
   story: [
     {
-      year: "30th November 2026 | 12:00 PM",
+      year: "30th November 2026 | 03:00 PM",
       title: "Mehendi Ceremony",
       description:
         "At Devika's place - 10/2,Coroment Society, Sector-27, Pradhikaran", // You can customize this story
